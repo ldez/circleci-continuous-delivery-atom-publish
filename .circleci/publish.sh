@@ -6,11 +6,10 @@ set -e
 USER_EMAIL="lfernandez.dev@gmail.com"
 USER_NAME="Ludovic Fernandez"
 PUBLISH_TYPE=${PUBLISH_TYPE:="patch"}
-SSH_KEY_NAME="circleci_rsa"
+# SSH_KEY_NAME="circleci_rsa"
 
-encrypted_key="secret"
+# encrypted_key="secret"
 
-# FIXME cd "$TRAVIS_BUILD_DIR"
 pwd
 
 ## Prevent publish on tags
@@ -34,11 +33,11 @@ GIT_REPOSITORY=${GIT_REPOSITORY/git:\/\/github.com\//git@github.com:}
 GIT_REPOSITORY=${GIT_REPOSITORY/https:\/\/github.com\//git@github.com:}
 
 ## Loading SSH key
-echo "Loading key..."
-openssl aes-256-cbc  -d -k "$encrypted_key" -in .circleci/${SSH_KEY_NAME}.enc -out ~/.ssh/${SSH_KEY_NAME}
-eval "$(ssh-agent -s)"
-chmod 600 ~/.ssh/${SSH_KEY_NAME}
-ssh-add ~/.ssh/${SSH_KEY_NAME}
+# echo "Loading key..."
+# openssl aes-256-cbc  -d -k "$encrypted_key" -in .circleci/${SSH_KEY_NAME}.enc -out ~/.ssh/${SSH_KEY_NAME}
+# eval "$(ssh-agent -s)"
+# chmod 600 ~/.ssh/${SSH_KEY_NAME}
+# ssh-add ~/.ssh/${SSH_KEY_NAME}
 
 ## Change origin url to use SSH
 git remote set-url origin ${GIT_REPOSITORY}
