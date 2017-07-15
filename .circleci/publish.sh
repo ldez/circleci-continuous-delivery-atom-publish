@@ -11,6 +11,7 @@ SSH_KEY_NAME="circle_rsa"
 encrypted_key="secret"
 
 # FIXME cd "$TRAVIS_BUILD_DIR"
+pwd
 
 ## Prevent publish on tags
 CURRENT_TAG=$(git tag --contains HEAD)
