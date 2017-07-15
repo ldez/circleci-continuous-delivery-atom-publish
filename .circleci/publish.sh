@@ -6,7 +6,7 @@ set -e
 USER_EMAIL="lfernandez.dev@gmail.com"
 USER_NAME="Ludovic Fernandez"
 PUBLISH_TYPE=${PUBLISH_TYPE:="patch"}
-SSH_KEY_NAME="circle_rsa"
+SSH_KEY_NAME="circleci_rsa"
 
 encrypted_key="secret"
 
