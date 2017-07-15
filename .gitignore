@@ -1,2 +1,3 @@
 *.old
 *old.md
+.circleci/circleci_rsa*

@@ -1,0 +1,18 @@
+machine:
+  environment:
+    # ATOM_LINT_WITH_BUNDLED_NODE: "true"
+    # APM_TEST_PACKAGES: ""
+    AUTHORIZED_BRANCH: "master"
+
+dependencies:
+  override:
+    # - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
+    # - chmod u+x build-package.sh
+    - echo "Install Atom"
+
+test:
+  override:
+    # - ./build-package.sh
+    - echo "Run package tests"
+  post:
+    - ./.circleci/publish.sh
